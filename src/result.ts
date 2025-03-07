@@ -87,6 +87,13 @@ export class Ok<T, E> {
   match<U>(options: { ok: (value: T) => U; err: (error: E) => U }): U {
     return options.ok(this.value);
   }
+
+  /**
+   * Returns undefined because there is no error
+   */
+  get error() {
+    return undefined;
+  }
 }
 
 /**
@@ -94,7 +101,14 @@ export class Ok<T, E> {
  */
 export class Err<T, E> {
   readonly _tag = "Err" as const;
-  constructor(readonly error: E) {}
+  constructor(private readonly err: E) {}
+
+  /**
+   * Returns the error value
+   */
+  get error() {
+    return this.err;
+  }
 
   /**
    * Returns true if the result is Ok

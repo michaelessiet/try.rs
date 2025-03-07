@@ -29,8 +29,7 @@
   },
   "homepage": "https://github.com/michaelessiet/trycatcher#readme",
   "devDependencies": {
-    "@types/bun": "latest",
-    "tsc": "^2.0.4"
+    "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
