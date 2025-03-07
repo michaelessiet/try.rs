@@ -1,24 +1,24 @@
-# TryCatcher
+# try.rs
 
-[![npm version](https://img.shields.io/npm/v/trycatcher.svg)](https://www.npmjs.com/package/trycatcher)
+[![npm version](https://img.shields.io/npm/v/try.rs.svg)](https://www.npmjs.com/package/try.rs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-A TypeScript library that brings Rust-like error handling to JavaScript and TypeScript. TryCatcher provides a `Result<T, E>` type that represents either success (`Ok<T>`) or failure (`Err<E>`), encouraging explicit error handling and making error flows more visible in your code.
+A TypeScript library that brings Rust-like error handling to JavaScript and TypeScript. try.rs provides a `Result<T, E>` type that represents either success (`Ok<T>`) or failure (`Err<E>`), encouraging explicit error handling and making error flows more visible in your code.
 
 ## Installation
 
 ```bash
 # Using npm
-npm install trycatcher
+npm install try.rs
 
 # Using yarn
-yarn add trycatcher
+yarn add try.rs
 
 # Using pnpm
-pnpm add trycatcher
+pnpm add try.rs
 
 # Using bun
-bun add trycatcher
+bun add try.rs
 ```
 
 ## Features
@@ -34,7 +34,7 @@ bun add trycatcher
 ## Basic Usage
 
 ```typescript
-import { ok, err, tryFn, tryAsync } from 'trycatcher';
+import { ok, err, tryFn, tryAsync } from 'try.rs';
 
 // Function that returns a Result
 function divide(a: number, b: number) {
@@ -85,7 +85,7 @@ console.log(getName('invalid')); // "Unknown"
 ## Async Support
 
 ```typescript
-import { tryAsync } from 'trycatcher';
+import { tryAsync } from 'try.rs';
 
 async function fetchData(url: string) {
   return tryAsync(async () => {
@@ -181,7 +181,7 @@ A type that represents either success (`Ok<T>`) or failure (`Err<E>`).
 ### Form Validation
 
 ```typescript
-import { ok, err } from 'trycatcher';
+import { ok, err } from 'try.rs';
 
 type ValidationError = {
   field: string;
@@ -245,7 +245,7 @@ result.match({
 ### API Requests
 
 ```typescript
-import { tryAsync } from 'trycatcher';
+import { tryAsync } from 'try.rs';
 
 async function fetchUser(id: string) {
   return tryAsync(async () => {
@@ -296,7 +296,7 @@ async function displayUserProfile(userId: string) {
 }
 ```
 
-## Why TryCatcher?
+## Why try.rs?
 
 Traditional error handling in JavaScript relies on try/catch blocks and throwing exceptions, which can lead to:
 
@@ -305,7 +305,7 @@ Traditional error handling in JavaScript relies on try/catch blocks and throwing
 3. Unclear error flows in your code
 4. Type-unsafe error handling
 
-TryCatcher addresses these issues by:
+try.rs addresses these issues by:
 
 1. Making error handling explicit through the `Result` type
 2. Forcing you to consider both success and error cases

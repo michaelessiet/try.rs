@@ -1,5 +1,5 @@
 {
-  "name": "trycatcher",
+  "name": "try.rs",
   "version": "0.1.0",
   "description": "Error handling but better. Heavily inspired by Rust error handling.",
   "main": "dist/index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/michaelessiet/trycatcher.git"
+    "url": "git+https://github.com/michaelessiet/try.rs.git"
   },
   "keywords": [
     "typescript",
@@ -25,9 +25,9 @@
   "author": "Michael Essiet",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/michaelessiet/trycatcher/issues"
+    "url": "https://github.com/michaelessiet/try.rs/issues"
   },
-  "homepage": "https://github.com/michaelessiet/trycatcher#readme",
+  "homepage": "https://github.com/michaelessiet/try.rs#readme",
   "devDependencies": {
     "@types/bun": "latest"
   },
