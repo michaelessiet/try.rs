@@ -1,16 +1,29 @@
 {
   "name": "try.rs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Error handling but better. Heavily inspired by Rust error handling.",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "types": "dist/index.d.ts",
-  "module": "src/index.ts",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/index.cjs",
+        "types": "./dist/index.d.cts"
+      }
+    }
+  },
   "type": "module",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc"
+    "clean": "rimraf dist",
+    "build": "bun run clean && tsup src/index.ts --dts --format cjs,esm"
   },
   "repository": {
     "type": "git",
@@ -29,7 +42,9 @@
   },
   "homepage": "https://github.com/michaelessiet/try.rs#readme",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.4.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
